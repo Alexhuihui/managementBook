@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>展示所有借书信息</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <table class="table table-striped">
+        <tr>
+            <th>借书序号</th>
+            <th>书名</th>
+            <th>借书人</th>
+            <th>借书日期</th>
+            <th>还书日期</th>
+            <th>是否已还</th>
+            <th>操作</th>
+        </tr>
+        #foreach($lend in $request.lends)
+        <tr>
+            <td>$!{lend.getSernum()}</td>
+            <td>$!{lend.getBookName()}</td>
+            <td>$!{lend.getReaderName()}</td>
+            <td>$!{lend.getLendDate()}</td>
+            <td>$!{lend.getBackDate()}</td>
+            #if($!{lend.getIsBack()} == 0)
+            <td>否</td>
+            #elseif($!{lend.getIsBack()} == 1)
+            <td>$!{lend.getMessage()}</td>
+            #end
+            <td><a id="back" href="/lend/back/operator?sernum=$!{lend.getSernum()}">还书</a></td>
+        </tr>
+        #end
+    </table>
+</body>
+</html>
