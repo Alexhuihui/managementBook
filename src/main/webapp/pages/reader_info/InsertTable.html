@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="javascript">
+        function changeProvince(){
+            with(document.myForm){
+                var countrys = new Array();
+                countrys["0"] = ["--请选择所在省份和地区--"];
+                countrys["江西"] = ["南昌","上饶","吉安","抚州","宜春"];
+                countrys["浙江"] = ["杭州","宁波","温州","嘉兴","金华","衢州"];
+                countrys["河北"] = ["石家庄","唐山","张家口","太原"];
+                var value = country.value;
+                province.options.length = 0;
+                var option;
+                for(i = 0;i < countrys[value].length;i++){
+                    option = new Option(countrys[value][i],countrys[value][i]);
+                    province.options.add(option);
+                }
+                if(country.value == "0")
+                    province.disabled = true;
+                else
+                    province.disabled = false;
+            }
+        }
+    </script>
+
+
+
+</head>
+<body>
+<img src="/images/timg7.jpg">
+<div style="position: absolute;top:300px;left:400px ;width: 300px;height: 400px;">
+
+<h2 style="color: cyan">添加读者信息</h2>
+<form action="/insertServlet" method="post" name="myForm">
+    <div>
+    用户id:<input type="text"placeholder="请输入用户id"name="reader_id" style="background-color: transparent;border-color: white;border-style: solid"><span>$!{request.id}</span></div>
+    <div><br></div>
+    <div>
+
+    用户名:<input type="text"name="name" style="background-color: transparent;border-color: white;border-style: solid"><span>$!{request.id}</span></div>
+    <div><br></div>
+    <div>
+    密码:&nbsp<input type="password"name="passwd" style="background-color: transparent;border-color: white;border-style: solid"><span>$!{request.id}</span></div>
+    <div><br></div>
+    <div>
+    性别:<input style="background-color: transparent;border-color: white;border-style: solid" type="radio"name="sex"value="男"checked>男
+    <input type="radio"name="sex"value="女">女</div>
+    <div><br></div>
+    <div>
+    出生日期<input type="date"name="birth" style="background-color: transparent;border-color: white;border-style: solid"></div>
+    <div><br></div>
+    <div>
+        省份：<select name="country" onChange="changeProvince()"style="background-color: transparent;border-color: white;border-style: solid">
+        <option value="0">--请选择所属省份--</option>
+        <option value="江西">江西</option>
+        <option value="浙江">浙江</option>
+    </select>
+    </div>
+    <div><br></div>
+    <div>省份/地区：<select name="province" style="background-color: transparent;border-color: white;border-style: solid">
+        <option>--请选择所在省份的地区--</option>
+    </select>
+    </div>
+    <div><br></div>
+    <div>
+    电话:<input type="text"name="telcode" style="background-color: transparent;border-color: white;border-style: solid"></div>
+    <div><br></div>
+    <div style="position: absolute;left: 150px">
+    <input type="submit" style="background-color: transparent;border-color: white;border-style: solid;color: cyan"></div>
+    <div style="position: absolute;left: 200px">
+        <input type="reset" style="background-color: transparent;border-color: white;border-style: solid;color: cyan">
+    </div>
+
+</form>
+
+</div>
+
+</body>
+</html>

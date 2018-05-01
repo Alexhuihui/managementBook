@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="/styles/cell.css"rel="stylesheet">
+    <link type="text/css" href="/styles/offset.css"rel="stylesheet">
+</head>
+<body>
+<div style="text-align: center;border-color: blue;border-radius: 10px;border-style: solid">
+<h2 style="color: blue">读者信息</h2></div>
+#if($readerList.size()>0)
+#foreach($c in $readerList)
+<div>
+    <span class="cell-2">读者id:$c.reader_id</span>
+    <span class="cell-1">姓名：$c.name</span>
+    <span class="cell-l">密码：$c.passwd</span>
+    <span class="cell-1">性别：$c.sex</span>
+    <span class="cell-2">出生日期：$c.birth</span>
+    <span class="cell-2">地址：$c.address</span>
+    <span class="cell-2">电话：$c.telcode</span>
+    <span class="cell-1"><a href="/deleteServlet?reader_id=${c.reader_id}">删除</a></span>
+</div>
+#end
+#else
+<div>
+    没有读者信息，请<a href="InsertTable.html">添加</a>
+</div>
+#end
+</body>
+</html>
