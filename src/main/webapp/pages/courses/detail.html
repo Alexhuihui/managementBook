@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详细信息</title>
+    <style>
+        .back4{
+            background-image: url("/images/timg7.jpg");
+        }
+    </style>
+</head>
+<body class="back4">
+
+<h1>详情</h1>
+<div style="text-align: center">
+    #set($course=$session.c)
+    <input name="book_id" value="${course.book_id}" type="hidden">
+    <!--图书ID ： <input type="text" name="book_id" value="$!{session.book_info.book_id}">-->
+    书名 ： <input type="text" name="name" value="$!{course.name}" readonly><br>
+    作者 ： <input type="text" name="author" value="$!{course.author}" readonly><br>
+    出版社 ： <input type="text" name="publish" value="$!{course.publish}" readonly><br>
+    国际标准图书编号 ： <input type="text" name="ISBN" value="$!{course.ISBN}" readonly><br>
+    简介 ：<textarea name="introduction" readonly>$!{course.introduction}</textarea ><br>
+    语言： <input type="text" name="language" value="$!{course.language}" readonly><br>
+    价格 ： <input type="text" name="price" value="$!{course.price}" readonly><br>
+    出版时间 ： <input type="text" name="pubdate" value="$!{course.pubdate}" readonly><br>
+    class_id ： <input type="text" name="class_id" value="$!{course.class_id}" readonly><br>
+    数量 ： <input type="text" name="number" value="$!{course.number}" readonly><br>
+
+</div>
+<a style="float: right" href="/pages/courses/courseList.html">返回</a>
+</body>
+</html>

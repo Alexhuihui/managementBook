@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理</title>
+    <link type="text/css" href="/styles/cell.css" rel="stylesheet">
+    <link type="text/css" href="/styles/offset.css"  rel="stylesheet">
+    <style>
+        .back2{
+            background-image: url("/images/timg7.jpg");
+        }
+    </style>
+</head>
+<body class="back2">
+
+<h1 style="font-size: 50px">图书管理</h1>
+<h1 ><a href="addCourse.html">添加课程</a></h1>
+
+#set( $result=$!{session.book})
+<table align="center">
+
+    <tr >
+        <th >书编号是:</th>
+        <th >书名称是:</th>
+        <th >作者是：</th >
+        <th >出版社是：</th>
+        <th  style="width: 110px">国际标准图书编号是：</th>
+        <!--<th>简介是：</th>-->
+        <th >语言是：</th>
+        <th >价格是：</th>
+        <th >出版时间是：</th>
+        <th >class_id是：</th>
+        <th >数量是：</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    #foreach($c in $result )
+
+    <tr>
+        <td><input type="text" value="$c.book_id" readonly style="width: 80px"></td>
+        <td><input type="text" value="$c.name" readonly style="width: 110px"></td>
+        <td><input type="text" value="$c.author" readonly style="width: 110px"></td>
+        <td><input type="text" value="$c.publish" readonly style="width: 160px"></td>
+        <td><input type="text" value="$c.ISBN" readonly style="width: 110px"></td>
+        <!--<td><input type="text" value="$c.introduction"></td>-->
+        <td><input type="text" value="$c.language" readonly style="width: 90px"></td>
+        <td><input type="text" value="$c.price" readonly style="width: 90px"></td>
+        <td><input type="text" value="$c.pubdate" readonly style="width: 90px"></td>
+        <td><input type="text" value="$c.class_id" readonly style="width: 90px"></td>
+        <td><input type="text" value="$c.number" readonly style="width: 90px"></td>
+        <td ><a href="/course/delete.do?book_id=${c.book_id}">删除</a></td>
+        <td ><a href="/course/load.do?book_id=${c.book_id}">修改</a></td>
+        <td ><a href="/course/detail.do?book_id=${c.book_id}">详情</a></td>
+    </tr>
+#end
+</table>
+</body>
+</html>

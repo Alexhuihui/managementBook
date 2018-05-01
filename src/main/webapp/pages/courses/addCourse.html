@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加图书</title>
+    <style>
+        .back3{
+            background-image: url("/images/timg7.jpg");
+        }
+
+    </style>
+</head>
+<h1 style="font-size: 25px">添加图书</h1>
+
+<body class="back3">
+<img src="/images/timg7.jpg">
+<form class="border" method="post" action="/course/add.do" style="text-align: center ">
+    <input type="text" name="book_id" placeholder="请 输 入 书 编 号" style="text-align: center "><br>
+    <input type="text" name="name" placeholder="请 输 入 书 名" style="text-align: center "><br>
+    <input type="text" name="author" placeholder="请 输 入 作 者" style="text-align: center "><br>
+    <input type="text" name="publish" placeholder=" 请输 入 出 版社名" style="text-align: center "><br>
+    <input type="text" name="ISBN" placeholder="请输国际标准图书编号" style="text-align: center "><br>
+    <textarea name="introduction" placeholder=" 请输入书的简介" style="text-align: center ;height: 50px"></textarea><br>
+    <input type="text" name="language" placeholder="   请输入语言" style="text-align: center "><br>
+    <input type="text" name="price" placeholder=" 请输入书的价格" style="text-align: center "><br>
+    <input type="date" name="pubdate" placeholder="  请输入书出版日期" style="text-align: center "><br>
+    <input type="text" name="class_id" placeholder="请输入class_id" style="text-align: center "><br>
+    <input type="text" name="number" placeholder="  请输入书数量 " style="text-align: center "><br>
+    <input type="submit" value="提交" ><br>
+    <input type="reset" value="重填" >
+</form>
+
+</body>
+</html>
