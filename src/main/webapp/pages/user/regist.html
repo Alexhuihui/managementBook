@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regist</title>
+    <link rel="stylesheet" href="../../css/regist.css" />
+</head>
+<body>
+    <div>
+        #include("pages/user/book.com.html")
+    </div>
+    <div id="bg" onclick="window.location='/firTransition.do'"></div>
+    <div id="window">
+
+        <div id="window_button">
+            <button id="login_button" onclick="window.location='/thiTransition.do'">
+                登录
+            </button>
+            <button id="register_button" onclick="window.location='regist.html'">
+                注册
+            </button>
+        </div>
+
+        <div class="window_input" id="register">
+            <form  action="/register.do" method="post">
+                <div style="color: #f00">
+                    $!{request.message}
+                </div>
+                <div>
+                    用户名：<br>
+                    <input type="text" name="name" id="name" placeholder="5-16位，由字母和数字组成">
+                </div>
+                <div>
+                    密码：<br>
+                    <input type="password" name="passwd" id="passwd" placeholder="5-15位，不可有特殊字符">
+                </div>
+                <div>
+                    确认密码：<br>
+                    <input type="password" name="repasswd" id="repasswd" placeholder="再次输入密码">
+                </div>
+                <div>
+                    电话号码：<br>
+                    <input type="text" name="telcode" id="telcode" placeholder="请输入电话号码">
+                </div>
+                <div>
+                    <input type="text" name="code" id="code" placeholder="请输入验证码" style="width: 150px">
+                    <img src="/codeFirst">
+                    <br>
+                    <span onclick="window.location.reload();">看不清，换一个</span>
+                </div>
+                <div style="width: 94%">
+                    <input type="submit" class="sub" value="注册账号">
+                    <input type="reset" class="sub" value="重填">
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>

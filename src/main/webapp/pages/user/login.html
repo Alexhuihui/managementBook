@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="../../css/login.css" />
+</head>
+<body>
+    <div>
+        #include("pages/user/book.com.html")
+    </div>
+    <div id="bg" onclick="window.location='/firTransition.do'"></div>
+    <div id="window">
+
+        <div id="window_button">
+            <button id="login_button" onclick="window.location='login.html'">
+                登录
+            </button>
+            <button id="register_button" onclick="window.location='/secTransition.do'">
+                注册
+            </button>
+        </div>
+
+        <div class="window_input" id="login">
+            <form action="/login.do" method="post">
+                <div style="color: #f00">
+                    $!{request.message}
+                </div>
+                <div>
+                    用户名：<br>
+                    <input type="text" name="name" id="login_name" placeholder="请输入您的用户名">
+                </div>
+                <div>
+                    密码：<br>
+                    <input type="password" name="passwd" id="login_passwd" placeholder="请输入您的密码">
+                </div>
+                <div>
+                    <input type="text" name="code" id="code" placeholder="请输入验证码" style="width: 150px">
+                    <img src="/codeSecond">
+                    <br>
+                    <span onclick="window.location.reload();login()">看不清，换一个</span>
+                </div>
+                <div style="width: 94%">
+                    <input type="submit" class="sub" value="登录">
+                    <input type="reset" class="sub" value="重填">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

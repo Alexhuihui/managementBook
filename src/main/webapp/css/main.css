@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    font-family:微软雅黑;
+}
+a{
+    text-decoration: none;
+}
+#head{
+    width: 1920px;
+    padding: 10px 0;
+    background-color:#003580;
+}
+#logo{
+    margin-left: 10%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+#logo_first{
+    color: #fff;
+}
+#logo_second{
+    color: #0077cc;
+}
+.login{
+    border: none;
+    height: 30px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 6px;
+    background-color: #fff;
+    font-weight: bold;
+    margin-left: 20px;
+}
+#info{
+    margin-left: 1000px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+.login:hover{
+    color: #07c;
+}
+
+#side{
+    float: left;
+    margin-top: 20px;
+    margin-left: 40px;
+    font-size: 20px;
+    width: 300px;
+    background-color: #1fdfff;
+    height: 900px;
+}
+.function{
+    padding: 20px 0;
+    border-bottom: #666 solid 1px;
+    text-align: center;
+    cursor: pointer;
+}
+.function:hover{
+    background-color: #febb02;
+}
+
+#contend{
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 900px;
+    width: 1520px;
+    border: #666 solid 1px;
+    float: left;
+}

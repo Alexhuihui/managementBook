@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    font-family:微软雅黑;
+}
+#bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #000;
+}
+#window{
+    position: absolute;
+    left: 36%;
+    top: 16%;
+    width: 450px;
+    background-color: #fff;
+    border: 1px solid #ededed;
+    box-shadow: 0 0  10px 2px #666;
+}
+#window_button{
+    padding: 0;
+}
+#window_button button{
+    margin: 0;
+    width: 50%;
+    max-width: 50%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    font-weight: bold;
+    float: left;
+}
+#login_button{
+    background-color: #fff;
+    color: #666;
+}
+#register_button{
+    background-color: #e9f0fa;
+    color: #07c;
+}
+.window_input{
+    padding: 20px 0;
+}
+.window_input div{
+    margin-top: 20px;
+    margin-left: 10%;
+}
+.window_input input{
+    padding: 6px;
+    margin-top: 8px;
+    width: 80%;
+}
+.sub{
+    background-color: #07c;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.sub:hover{
+    background-color: #003580;
+}
