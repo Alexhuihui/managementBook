@@ -56,7 +56,7 @@ public class RegisterUserServlet extends HttpServlet {
                     if (StringHelper.notEmpty(password)) {
                         // 表示 用户名是可用的
                         // 密码 长度 6~18位
-                        if (password.length() < 5 || password.length() > 15 || (!username.matches("[A-Za-z0-9]+"))) {
+                        if (password.length() < 5 || password.length() > 15 || (!password.matches("[A-Za-z0-9]+"))) {
                             // 密码长度过长或过短 ： 返回到注册页面进行提示
                             request.setAttribute("message", "密码长度在5~15位之间,且仅包含数字和字母");
                         } else {
