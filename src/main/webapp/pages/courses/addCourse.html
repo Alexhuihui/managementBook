@@ -7,13 +7,15 @@
         .back3{
             background-image: url("/images/timg7.jpg");
         }
-
+        .border{
+            margin-left: 600px;
+            margin-top: 120px;
+        }
     </style>
 </head>
 <h1 style="font-size: 25px">添加图书</h1>
 
 <body class="back3">
-<img src="/images/timg7.jpg">
 <form class="border" method="post" action="/course/add.do" style="text-align: center ">
     <input type="text" name="book_id" placeholder="请 输 入 书 编 号" style="text-align: center "><br>
     <input type="text" name="name" placeholder="请 输 入 书 名" style="text-align: center "><br>
@@ -29,6 +31,6 @@
     <input type="submit" value="提交" ><br>
     <input type="reset" value="重填" >
 </form>
-
+<a href="courseList.html" style="float: right;margin-top: 200px">返回上一页</a>
 </body>
 </html>
