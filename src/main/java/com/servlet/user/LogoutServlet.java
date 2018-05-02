@@ -16,6 +16,6 @@ public class LogoutServlet extends HttpServlet {
         HttpSession session = request.getSession() ;
         session.removeAttribute("user");
         session.invalidate(); // 废弃session
-        response.sendRedirect("/book.com.html");
+        response.sendRedirect("pages/user/book.com.html");
     }
 }

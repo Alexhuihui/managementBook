@@ -55,10 +55,10 @@ public class LoginServlet extends HttpServlet {
         }
         if( isCode && isPassword && isUsername){
             if(username.equals("admin")){
-                response.sendRedirect("pages/user/book.com.html");
+                response.sendRedirect("pages/user/user.html");
             }
             request.getSession().setAttribute("user" , user );
-            response.sendRedirect("pages/user/book.com.html");
+            response.sendRedirect("pages/user/user.html");
         }else{
             // 返回到登录页面
             request.getRequestDispatcher("pages/user/login.html").forward(request , response );
