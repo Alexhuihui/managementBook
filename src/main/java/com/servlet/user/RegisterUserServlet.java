@@ -98,11 +98,12 @@ public class RegisterUserServlet extends HttpServlet {
             u.setTelcode(telephone);
             boolean result = ud.add(u) ;
             if( result ){
-                response.getWriter().print("<h1>注册成功，3秒之后自动回到首页</h1>") ;
-                response.setHeader("refresh", "3;url=pages/user/book.com.html");
+                request.getSession().setAttribute("user" , u );
+                response.getWriter().print("<h1>注册成功，1秒之后自动跳转至用户页面</h1>") ;
+                response.setHeader("refresh", "1;url=pages/user/user.html");
             }else{
-                response.getWriter().print("<h1>注册失败，3秒之后自动回到首页</h1>") ;
-                response.setHeader("refresh", "3;url=pages/user/book.com.html");
+                response.getWriter().print("<h1>注册失败，1秒之后自动回到首页</h1>") ;
+                response.setHeader("refresh", "1;url=pages/user/book.com.html");
             }
         }else{
             request.getRequestDispatcher("pages/user/regist.html").forward(request , response );
