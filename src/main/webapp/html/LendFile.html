@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="Css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div style="text-align: center;
+    background-color: bisque;
+    border-radius: 20px;
+    width: 500px;
+    height: 550px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;">
+
+    #set($id=${request.user.reader_id})
+
+    <form action="/LendFiles.do?id=${id}" method="post" name="user">
+        <input type="hidden" value="$!{request.user.reader_id}" name="id">
+        <div style="margin-top: 30px;font-family: Helvetica">
+    <div style="margin-top: 30px;font-family: Helvetica">
+        <h1>你的账户</h1>
+        <span>借书卡号</span>
+        <span>${request.book.Rid}</span>
+    </div>
+    <div style="margin-top: 30px;font-family: Helvetica">
+        <span>借书时间:</span>
+        <span>${request.book.Ldate}</span>
+    </div>
+    <div style="margin-top: 30px;font-family: Helvetica">
+        <span>还书时间:</span>
+        <span>${request.book.Bdate}</span>
+    </div>
+
+    <div style="margin-top: 30px;font-family: Helvetica">
+        <a href="index.html"><input type="button" value="返回"></a>
+    </div>
+</div>
+</body>
+</html>

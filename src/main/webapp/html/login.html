@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/UserFiles.do">
+
+    <input type="text" name="name" placeholder="请输入用户名" >
+    <input type="password" name="password" placeholder="请输入密码">
+    <input type="text" name="code" placeholder="请输入验证码">
+    <img src="/code">
+    <span onclick="window.location.reload()">看不清，换一个</span>
+    <span>$!{request.codeMessage}</span>
+    <input type="submit" value="登录">
+    <input type="reset" value="取消">
+</form>
+</body>
+</html>

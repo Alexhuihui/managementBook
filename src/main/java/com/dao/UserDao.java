@@ -5,8 +5,8 @@ import com.utils.DBHelper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * 针对于User 访问数据库
@@ -38,7 +38,7 @@ public class UserDao{
     public User loadByUsername( String username ){
         User u = null ;
         // 利用DBHelper 查询数据库
-        String SQL = " select reader_id,name,passwd,telcode from " + TABLENAME + " where name = ? " ;
+        String SQL = " select reader_id,name,passwd,sex,birth,address,telcode from " + TABLENAME + " where name = ? " ;
         ResultSet rs = DBHelper.query( SQL , username ) ;
         u = wrap( rs ) ;
         return u ;
@@ -57,5 +57,48 @@ public class UserDao{
             e.printStackTrace();
         }
         return u ;
+    }
+
+    public User loadByName(String name) {
+        String SQL = "select reader_id,name,passwd,sex,birth,address,telcode from " + TABLENAME + " where name = ? ";
+        System.out.println(name);
+        ResultSet rs = DBHelper.query(SQL, name);
+        List<User> list = wrapList(rs);
+        /*for (user list1:list) {
+            System.out.println("以下为结果集");
+            System.out.println(list1);
+        }*/
+        return list.get(0);
+    }
+
+    public boolean updateu(String password,String id) {
+        String SQL = "UPDATE " + TABLENAME + "set passwd = ?  where reader_id = ? " ;
+        return DBHelper.execute(SQL , password ,  id )  ;
+    }
+
+    public List loadAll() {
+        String SQL = "select reader_id,name,passwd,sex,birth,address,telcode from" + TABLENAME;
+        ResultSet rs = DBHelper.query(SQL);
+        return wrapList(rs);
+    }
+
+    public List<User> wrapList(ResultSet rs) {
+        List<User> list = new ArrayList<>();
+        try {
+            while(rs.next()){
+                User u = new User();
+                u.setReader_id(rs.getString("reader_id"));
+                u.setName(rs.getString("name"));
+                u.setPasswd(rs.getString("passwd"));
+                u.setSex(rs.getString("sex"));
+                u.setBirth(rs.getString("birth"));
+                u.setAddress(rs.getString("address"));
+                u.setTelcode(rs.getString("telcode"));
+                list.add(u);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }

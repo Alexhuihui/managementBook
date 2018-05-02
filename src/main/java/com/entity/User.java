@@ -9,7 +9,7 @@ public class User implements Serializable {
     private String name ;
     private String passwd ;
     private String sex ;
-    private Date birth;
+    private String birth;
     private String address;
     private String telcode;
 
@@ -45,11 +45,11 @@ public class User implements Serializable {
         this.sex = sex;
     }
 
-    public Date getBirth() {
+    public String getBirth() {
         return birth;
     }
 
-    public void setBirth(Date birth) {
+    public void setBirth(String birth) {
         this.birth = birth;
     }
 

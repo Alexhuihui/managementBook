@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="Css.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="background-image: url('/images/valve.jpg')">
+<div style="text-align: center;
+    background-color: bisque;
+    border-radius: 20px;
+    width: 500px;
+    height: 550px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;">
+    <h1>你的账户</h1>
+    <div style="margin-top: 30px;font-family: Helvetica">
+        <span>用户名:</span>
+        <span>$!{session.user.name}</span>
+    </div>
+    <div style="margin-top: 30px;font-family: Helvetica">
+        <span>性别:</span>
+        <span>$!{session.user.sex}</span>
+    </div>
+    <div style="margin-top: 30px;font-family: Helvetica">
+        <span>生日:</span>
+        <span>$!{session.user.birth}</span>
+    </div>
+    <div style="margin-top: 30px;font-family: Helvetica">
+        <span>地址:</span>
+        <span>$!{session.user.address}</span>
+    </div>
+    <div style="margin-top: 30px;font-family: Helvetica">
+        <span>电话:</span>
+        <span>$!{session.user.telcode}</span>
+    </div>
+    <div style="margin-top: 30px;font-family: Helvetica">
+        <a href="index.html"><input type="button" value="返回"></a>
+        <form action="/html/updatep?id=${session.user.reader_id}" method="post">
+            <input type="submit" value="修改">
+        </form>
+        <form action="/LendFiles.do?id=${session.user.reader_id}" method="post">
+            <input type="submit" value="查询">
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

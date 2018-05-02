@@ -36,6 +36,7 @@ public class LoginServlet extends HttpServlet {
         }else{
             User user = ud.loadByUsername( username );
             if( user == null || (!StringHelper.encrypt( password ).equals(user.getPasswd()))) {
+//            if( user == null || (! password .equals(user.getPasswd()))) {
                 request.setAttribute("message" , "用户名或密码错误");
             }
             else if(username.equals("admin")){
