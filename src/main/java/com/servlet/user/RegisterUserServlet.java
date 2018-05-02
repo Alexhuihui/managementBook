@@ -35,7 +35,7 @@ public class RegisterUserServlet extends HttpServlet {
             request.setAttribute("message" , "用户名长度在5~16位之间,且仅包含数字和字母");
         }else if(password.length() < 5 || password.length() > 15 || (!password.matches("[A-Za-z0-9]+"))) {
             request.setAttribute("message", "密码长度在5~15位之间,且仅包含数字和字母");
-        }else if(password.equals(rePassword)) {
+        }else if(!password.equals(rePassword)) {
             request.setAttribute("message", "两次密码不一致");
         }else if(!(telephone.length()==11 && telephone.matches("[0-9]+"))) {
             request.setAttribute("message", "电话号码输入有误");
