@@ -14,7 +14,7 @@
 <body class="back2">
 
 <h1 style="font-size: 50px">图书管理</h1>
-<h1 ><a href="addCourse.html">添加课程</a></h1>
+<h1 ><a href="addCourse.html">添加图书</a></h1>
 
 #set( $result=$!{session.book})
 <table align="center">
@@ -29,7 +29,7 @@
         <th >语言是：</th>
         <th >价格是：</th>
         <th >出版时间是：</th>
-        <th >class_id是：</th>
+        <th >类名是：</th>
         <th >数量是：</th>
         <th></th>
         <th></th>
@@ -49,11 +49,13 @@
         <td><input type="text" value="$c.pubdate" readonly style="width: 90px"></td>
         <td><input type="text" value="$c.class_id" readonly style="width: 90px"></td>
         <td><input type="text" value="$c.number" readonly style="width: 90px"></td>
-        <td ><a href="/course/delete.do?book_id=${c.book_id}">删除</a></td>
+        <td ><a href="/course/delete.do?book_id=${c.book_id}"onclick=alert("确定删除？")>删除</a></td>
         <td ><a href="/course/load.do?book_id=${c.book_id}">修改</a></td>
         <td ><a href="/course/detail.do?book_id=${c.book_id}">详情</a></td>
     </tr>
 #end
 </table>
+<a href="../user/login.html" style="float: right;margin-top: 180px">返回上一页</a>
+
 </body>
 </html>

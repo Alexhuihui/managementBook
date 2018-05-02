@@ -13,7 +13,7 @@
         }
     </style>
 </head>
-<h1 style="font-size: 25px">添加图书</h1>
+<h1 style="font-size: 55px">修改图书信息</h1>
 
 <body class="back5">
 
@@ -32,9 +32,9 @@
         类名 ： <input type="text" name="class_id" value="$!{course.class_id}"><br>
         数量 ： <input type="text" name="number" value="$!{course.number}"><br>
 
-        <input type="submit" value="确定">
+        <input type="submit" value="确定"onclick=alert("确定修改？")>
         <input type="reset" value="重填">
     </form>
-    <a style="float: right" href="/pages/courses/courseList.html">返回</a>
+    <a style="float: right;margin-top: 180px" href="/pages/courses/courseList.html">返回上一页</a>
 </body>
 </html>

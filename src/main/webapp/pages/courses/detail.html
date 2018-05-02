@@ -14,8 +14,7 @@
     </style>
 </head>
 <body class="back4">
-
-<h1>详情</h1>
+<h1 style="font-size: 55px">图书详细信息</h1>
 <div class="d1" style="text-align: center">
     #set($course=$session.c)
     <input name="book_id" value="${course.book_id}" type="hidden">
@@ -32,6 +31,6 @@
     数量 ： <input type="text" name="number" value="$!{course.number}" readonly><br>
 
 </div>
-<a style="float: right" href="/pages/courses/courseList.html">返回</a>
+<a style="float: right;margin-top: 180px" href="/pages/courses/courseList.html">返回上一页</a>
 </body>
 </html>
