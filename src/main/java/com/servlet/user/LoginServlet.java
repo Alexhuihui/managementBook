@@ -1,6 +1,8 @@
 package com.servlet.user;
 
+import com.dao.CourseDao;
 import com.dao.UserDao;
+import com.entity.Course;
 import com.entity.User;
 import com.utils.StringHelper;
 
@@ -10,10 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/login.do")
 public class LoginServlet extends HttpServlet {
     UserDao ud = new UserDao() ;
+    CourseDao cd = new CourseDao() ;
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -35,7 +39,13 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("message" , "用户名或密码错误");
             }
             else if(username.equals("admin")){
-                response.sendRedirect("pages/user/user.html");
+                request.getSession().setAttribute("admin_id" , user.getReader_id() );
+                // 获取所有的课程
+                List<Course> book =  cd.loadAll() ;
+
+                request.getSession().setAttribute("book" , book );
+                // 重定向
+                response.sendRedirect("pages/courses/courseList.html");
                 return;
             }
             else {
