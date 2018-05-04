@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理系统</title>
+    <link rel="stylesheet" href="../../css/main.css" />
+</head>
+<body>
+    #if(!$!{session.user})
+        <h1><a href="book.com.html">请登录，点此返回首页</a></h1>
+    #else
+    <div id="head">
+        <a href="book.com.html" id="logo">
+            <span id="logo_first">
+                Book
+            </span>
+            <span id="logo_second">
+                .com
+            </span>
+        </a>
+        <div id="user_head">$request.session.user.name.substring(0,1)</div>
+        <a class="info" href="../../html/UserFile.html" style="margin-left: 10px">
+            欢迎你，$!{request.session.user.name}
+        </a>
+        <button  class="login" onclick="window.location='/logout.do'">
+            注销
+        </button>
+
+    </div>
+    <div style="width: 1920px;">
+        <div id="side">
+            <div class="function">
+                <a href="../courses/courseList.html">图书信息管理</a>
+            </div>
+            <div class="function">
+                <a href="/lend/back/show">还书管理</a>
+            </div>
+            <div class="function">
+                <a href="">借书管理</a>
+            </div>
+            <div class="function">
+                <a href="">续借管理</a>
+            </div>
+            <div class="function">
+                <a href="">读者管理</a>
+            </div>
+        </div>
+
+        <div id="contend">
+
+        </div>
+    </div>
+    #end
+
+</body>
+</html>

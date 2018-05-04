@@ -45,8 +45,8 @@ public class LoginServlet extends HttpServlet {
                 List<Course> book =  cd.loadAll() ;
 
                 request.getSession().setAttribute("book" , book );
-                // 重定向
-                response.sendRedirect("pages/courses/courseList.html");
+                request.getSession().setAttribute("user" , user );
+                response.sendRedirect("pages/user/admin.html");
                 return;
             }
             else {
