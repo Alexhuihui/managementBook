@@ -12,8 +12,8 @@ public class CourseDao implements  BaseDao<Course>{
     private static final String TABLENAME = " book_info " ;
     public Course loadById(String book_id ){
         String SQL = " select book_id ,name , author ,  publish , ISBN , introduction , language , price , pubdate , class_id , number from " + TABLENAME + " where book_id = ? " ;
-        ResultSet rs = DBHelper.query( SQL , book_id ) ;
-        List<Course> list = wrap( rs ) ;
+        ResultSet rs = DBHelper.query( SQL , book_id ) ;//将查询到的结果放在一个结果集里
+        List<Course> list = wrap( rs ) ;//再声明一个list对象，把结果放到这个对象里
         return list.get(0) ;
     }
     @Override

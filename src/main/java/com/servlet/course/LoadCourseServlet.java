@@ -19,7 +19,7 @@ public class LoadCourseServlet extends HttpServlet{
         String book_id = request.getParameter("book_id") ;
         Course c = cd.loadById( book_id ) ;
         if( c != null ){
-            request.getSession().setAttribute("c" , c );
+            request.getSession().setAttribute("c" , c );//c里的内容传到update.html界面
             response.sendRedirect("/pages/courses/update.html");
         }else{
             // 没有获取到

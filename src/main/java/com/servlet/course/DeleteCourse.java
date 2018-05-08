@@ -16,7 +16,7 @@ public class DeleteCourse extends HttpServlet {
     CourseDao cd = new CourseDao() ;
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String book_id = request.getParameter("book_id");
+        String book_id = request.getParameter("book_id");//获取前面传来的id
         Course c = new Course() ;
         c.setBook_id( book_id );
         boolean b = cd.delete(c ) ;

@@ -34,14 +34,14 @@ public class LoginServlet extends HttpServlet {
         }else if(!code.equalsIgnoreCase( sessionCode )){
             request.setAttribute("message" , "验证码错误");
         }else{
-            User user = ud.loadByUsername( username );
+            User user = ud.loadByUsername( username );//比较数据库里的用户名
             if( user == null || (!StringHelper.encrypt( password ).equals(user.getPasswd()))) {
 //            if( user == null || (! password .equals(user.getPasswd()))) {
                 request.setAttribute("message" , "用户名或密码错误");
             }
             else if(username.equals("admin")){
                 request.getSession().setAttribute("admin_id" , user.getReader_id() );
-                // 获取所有的课程
+                // 获取所有的图书
                 List<Course> book =  cd.loadAll() ;
 
                 request.getSession().setAttribute("book" , book );

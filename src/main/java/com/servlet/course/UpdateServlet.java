@@ -42,9 +42,9 @@ public class UpdateServlet extends HttpServlet {
         c.setPubdate(pubdate);
         c.setClass_id(class_id);
         c.setNumber(number);
-         boolean b = cd.update( c ) ;
+         boolean b = cd.update( c ) ;//将c里内容传到数据库中
          if( b ){
-             List<Course> book =  cd.loadAll() ;
+             List<Course> book =  cd.loadAll() ;//如果成功了，就将cd 里的内容放在一个list 里 ，再通过session传到前端页面
 
              request.getSession().setAttribute("book" , book );
              response.sendRedirect("/pages/courses/courseList.html");
